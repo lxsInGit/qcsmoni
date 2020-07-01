@@ -1,0 +1,90 @@
+div,ul,li,input{
+    margin: 0;
+    padding: 0;
+}
+.miaosha{
+    overflow: hidden;
+    width: 23.4375rem;
+    height: 12.8125rem;
+    box-sizing:border-box;
+    background-repeat: no-repeat;
+    background-image: url(https://image.watsons.com.cn//upload/a3fdb0b5.jpg?x-oss-process=image/quality,q_80/format,webp);
+    background-size:23.4375rem 12.8125rem;
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:.75rem .625rem .375rem;
+        margin:0 .5rem;
+        font-size: .75rem;
+        box-sizing: border-box;
+        .daojishi{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin:0 .5rem;
+            span{
+                padding: 0 .3125rem;
+                margin-left:10px;
+                background:black;color:white;
+            }
+        }
+    }
+    ul{
+        margin:.3125rem .5rem;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: scroll;
+        .miaosha-Item{
+            margin-right: 10px;
+            width: 6.0625rem;
+            height: 9.4375rem;
+            background: #fff;
+            box-shadow: white;
+            a{
+                text-decoration: none;
+              }
+            .item-img{
+                width: 5.9375rem;
+                height: 5.9375rem;
+                margin: 0;
+                padding: 0;
+                border-bottom: .0625rem solid rgb(143, 141, 141);
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .item-title{
+                margin: .375rem .3125rem 0;
+                padding: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .item-price{
+                padding: 0;
+                color: pink;
+            }
+        }
+    }
+  
+}
+
+.baopintabbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    font-weight: 700;
+    li{
+        width: 5.875rem;
+        height: 2.875rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .selectBaopin{
+        border-bottom: 2px solid blueviolet;
+    }
+}

@@ -1,0 +1,26 @@
+.qcs-item-head{
+    display: flex;
+    height: 41.5px;
+    width: 100%;
+    .item-back{
+      width: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding:0 2.8125rem;
+      width: 100%;
+      
+    }
+  }
+.qcs-item-content{
+    img{
+        width: 23.4375rem;
+        height:23.4375rem;
+    }
+}
+  
