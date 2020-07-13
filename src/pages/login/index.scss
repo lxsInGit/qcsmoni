@@ -1,0 +1,146 @@
+.qcs-login-head{
+    display: flex;
+    height: 41.5px;
+    width: 100%;
+    border-bottom: .0625rem solid #ccc;
+    position:relative;
+    .item-back{
+        width: 3.125rem;
+        position: absolute;
+        top:10px;
+        left: 0;
+        font-size: 1.25rem;
+    }
+    div{
+      padding:0 2.8125rem;
+      display: inline-block;
+      overflow: hidden;
+      line-height: 2.59375rem;
+      text-align: center;
+      font-size:18px;
+      width: 100%;
+      
+    }
+}
+.qcs-login-form{
+    padding:2.5rem 1.875rem;
+    width: 100%;
+    box-sizing: border-box;
+    .login-form-img{
+        margin: 0 6.125rem 1.875rem;
+        img{
+            width: 7.46875rem;
+            height: 1.5rem;
+        }
+    }
+    .phone{
+        margin-top: .26667rem;
+        padding: .9375rem;
+        background: #fff;
+        box-sizing: border-box;
+        width: 19.6875rem;
+        height: 2.9375rem;
+        border: 1px solid #ccc;
+       input{
+            display: block;
+            border-radius: .13333rem;
+            width: 100%;
+            color: #4a4a4a;
+            font-size: .4rem;
+            outline: none;
+            border: none;
+       }
+    }
+    .picCode{
+        display: flex;
+        justify-content: space-between;
+        margin-top: .26667rem;
+        div:nth-of-type(1){
+            width: 12.5rem;
+            height: 2.9375rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .9375rem;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            input{
+                display: block;
+                border-radius: .13333rem;
+                width: 100%;
+                color: #4a4a4a;
+                font-size: .4rem;
+                outline: none;
+                border: none;
+           } 
+        }
+        div:nth-of-type(2){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6.71875rem;
+            height: 40px;
+        }
+       
+    }
+    .smsCode{
+        display: flex;
+        justify-content: space-between;
+        margin-top: .26667rem;
+        div:nth-of-type(1){
+            width: 12.5rem;
+            height: 2.9375rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .9375rem;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            input{
+                display: block;
+                border-radius: .13333rem;
+                width: 100%;
+                color: #4a4a4a;
+                font-size: .4rem;
+                outline: none;
+                border: none;
+           } 
+        }
+       .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .05333rem;
+           background: #000;
+           font-size: .9375rem;
+           padding: 0 .925rem;
+           color: #fff;
+        }
+        .togray{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: .05333rem;
+            font-size: .9375rem;
+            padding: 0 .925rem;
+            color: #fff;
+            background: gray;
+        }
+       
+    }
+    .user-agree{
+        color: #919090;
+        font-size: .75rem;
+        margin-bottom: 1.25rem;
+    }
+    .login-denglu{
+        margin-top: .625rem;
+        padding: 0 1.5625rem;
+        height: 2.8125rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        color: #fff;
+    }
+}

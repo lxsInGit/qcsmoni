@@ -47,12 +47,12 @@ class HeadTitle extends Component {
                  </ul>
              </div>
          </div>
-         ):(
+         ):pathname==='/item'||pathname==='/list'?(
             <div className={"header-img"}>
             <img src={"https://image.watsons.com.cn//upload/f573b66d.jpg"} alt={"头部广告图"} />
 
         </div>  
-         )}
+         ):''}
         </div>
     }
 }

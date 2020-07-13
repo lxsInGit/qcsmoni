@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { miaoshaData, baopinData } from '.././../http/api';
+import {Link} from 'react-router-dom'
 import Miaosha from './components/miaosha';
 import Baopin from './components/baopin'
 import './index.scss'
@@ -26,7 +27,7 @@ class Main extends Component {
     
     componentDidMount() {
         miaoshaData().then((res) => {
-            console.log(res)
+            //console.log(res)
             this.setState({
                 startT: res.data.data.now,
                 endT: res.data.data.specials_time_ranges[0].end,
@@ -38,7 +39,7 @@ class Main extends Component {
     }
     getbaopinData=(group_id)=>{
         baopinData(group_id).then((res)=>{
-            console.log(res)
+            //console.log(res)
             this.setState({
                 baopinList: res.data.data.item_list
             })
@@ -70,6 +71,7 @@ class Main extends Component {
                
            </ul>
             <Baopin baopinlist={baopinList}/>
+            <Link to='/list'>列表页</Link>
         </div>
     }
 }
