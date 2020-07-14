@@ -20,3 +20,7 @@ export const listData = async (current_page)=>{
 export const smsCodeData = async ()=>{
     return await http.get('http://192.168.2.251:7001/sms/addSms?phone=15012345678');
 }
+//4.center页token验证接口
+export const centerTokenData = async ()=>{
+    return await http.getToken('http://192.168.2.251:7001/sms/addSms?phone=15012345678');
+}

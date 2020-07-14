@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { LeftOutlined } from '@ant-design/icons';
-import { message} from 'antd';
+import withGoBack from '../../hoc'
+import { message } from 'antd';
 //import {smsCodeData} from '../../http/api'
 import './index.scss'
 
@@ -14,11 +15,8 @@ class Login extends Component {
             smsCode: '',
             btnText: '发送验证码',
             disabled: true,
-            timer:null,
+            timer:null
         }
-    }
-    goback = () => {
-        this.props.history.go(-1)
     }
     changePhone = (ev) => {
         this.setState({
@@ -54,7 +52,8 @@ class Login extends Component {
             //     console.log(1111,res)
             // })
             let i = 60;
-            let timer = setInterval(() => {
+
+            let timer= setInterval(() => {
                 console.log(i)
                 this.setState({
                     btnText: '重发(' + i + 's)',
@@ -68,10 +67,10 @@ class Login extends Component {
                     clearInterval(timer);
                 }
                 i--;
-            }, 1000)
+            }, 1000);
             this.setState({
-                timer:timer
-            });
+                timer
+            })
         }
     }
     qcsLogin = () => {
@@ -80,7 +79,7 @@ class Login extends Component {
         let re = /\d{4}/;
         let phone = this.state.phone.trim();
         let picCode = this.state.picCode.trim();
-        let smsCode =this.state.smsCode.trim();
+        let smsCode = this.state.smsCode.trim();
         if (phone === '' || !reg.test(phone)) {
             message.error('手机号码不能为空', 0.5)
         } else if (!rep.test(phone)) {
@@ -89,32 +88,34 @@ class Login extends Component {
             message.error('图片验证码格式错误', 0.5)
         } else if (!re.test(smsCode)) {
             message.error('验证码格式错误', 0.5)
-        } else { 
+        } else {
             // const data = {"phone":phone,"smsCode":sms};
-			// LoginData(data).then((res)=>{
-			// 	console.log(res);
-			// 	if(res.data.code === 1){//失败
-			// 		message.error(res.data.msg,0.5);
-			// 	}else{//成功
+            // LoginData(data).then((res)=>{
+            // 	console.log(res);
+            // 	if(res.data.code === 1){//失败
+            // 		message.error(res.data.msg,0.5);
+            // 	}else{//成功
             // 将成功的信息保存到缓存
             //localStorage.setItem('token', res.data.data.token);
+            localStorage.setItem('token', phone);
             //跳转页面
             this.props.history.push('/center');
         }
     }
-    componentWillUnmunt(){
+    componentWillUnmount(){
         //如果到其他页面时，清除定时器
-        clearInterval(this.state.timer );
-		this.setState = (state,callback)=>{//
-			return;
+        //console.log(this.interval)
+        clearInterval(this.state.timer);
+        this.setState = (state, callback) => {//
+            return;
         }
-        
-	}
+
+    }
     render() {
         const { btnText, disabled } = this.state
         return <div>
             <div className={'qcs-login-head'}>
-                <LeftOutlined className={'item-back'} onClick={this.goback} />
+                <LeftOutlined className={'item-back'} onClick={this.props.goBack} />
                 <div>
                     登录/注册
                 </div>
@@ -139,4 +140,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withGoBack(Login);

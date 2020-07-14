@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import withGoBack from '../../hoc'
 import { LeftOutlined, HomeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 // import { Badge } from 'antd';
 // import {Link} from 'react-router-dom'
@@ -23,9 +24,7 @@ class Item extends Component {
         }
        // console.log(nowShopCart)
     }
-    goback = () => {
-        this.props.history.go(-1)
-    }
+ 
     appendshop=(value)=>{
        // console.log(value)
         let data = [];
@@ -83,7 +82,7 @@ class Item extends Component {
          const {totalNum} = this.state
         return <div>
             <div className={'qcs-item-head'}>
-                <LeftOutlined className={'item-back'} onClick={this.goback} />
+                <LeftOutlined className={'item-back'} onClick={this.props.goBack} />
                 <div>
                     {itemData.item_short_name.split(' ')[0]}
                 </div>
@@ -105,4 +104,4 @@ class Item extends Component {
     }
 }
 
-export default Item;
+export default withGoBack(Item);

@@ -67,5 +67,19 @@ http.get  = function (api,data){
         })
     })
 }
+http.getToken  = function (api,data){
+    //参数的序列化
+    return new Promise((resolve,reject)=>{
+        axios({
+            method:'get',
+            url:base+api,
+            headers:{
+                'Authorization':localStorage['token']
+            }
+        }).then((res)=>{
+            resolve(res);
+        })
+    })
+}
     //输出
 export default http;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import withGoBack from '../../hoc'
 import { LeftOutlined, DeleteOutlined } from '@ant-design/icons';
 import './index.scss';
 
@@ -133,9 +134,9 @@ class Cart extends Component {
         }
         this.common(data)
     };
-    goback = () => {
-        this.props.history.go(-1)
-    }
+    // goback = () => {
+    //     this.props.history.go(-1)
+    // }
     tomain = () => {
         this.props.history.push('/')
     }
@@ -143,7 +144,7 @@ class Cart extends Component {
         const { shopLists, type, totalPrice, totalPiece } = this.state
         return <div>
             <div className={'qcs-cart-head'}>
-                <LeftOutlined className={'item-back'} onClick={this.goback} />
+                <LeftOutlined className={'item-back'} onClick={this.props.goBack} />
                 <div>
                     购物车
                 </div>
@@ -221,4 +222,4 @@ class Cart extends Component {
     }
 }
 
-export default Cart;
+export default withGoBack(Cart);
